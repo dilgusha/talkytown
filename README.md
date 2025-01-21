@@ -24,28 +24,28 @@ TalkyTown
 
 TalkyTown is a backend application designed for creating real-time communication and chat applications. This project offers a modern infrastructure that enables users to communicate and exchange messages in real-time, utilizing WebSocket technology. It is developed using NestJS and features a dynamic and scalable architecture.
 
-Features
+ Features
 - User management (registration, login, authorization)
 - Real-time messaging (WebSocket integration)
 - Database connectivity and operations
 - Modular and scalable architecture
 - Template-based dynamic content management
 
-Technologies Used
+ Technologies Used
 - NestJS: A modern Node.js framework with a modular architecture.
 - TypeScript: Used for safer and more readable code.
 - PostgreSQL: A robust relational database management system.
 - TypeORM: An ORM library for database interactions.
 - WebSocket: For real-time communication.
 
-Installation
+ Installation
 
-Requirements
+ Requirements
 - Node.js (16.x or higher)
 - npm or yarn
 - PostgreSQL (a running database instance is required)
 
-Steps
+ Steps
 1. Clone the repository:
    ```bash
    git clone https://github.com/dilgusha/talkytown.git
@@ -73,7 +73,7 @@ Steps
    npm run start
    ```
 
-Project Structure
+ Project Structure
 ```
 src/
 ├── app/
@@ -97,29 +97,63 @@ src/
 └── main.ts
 ```
 
-- socket: Modules for WebSocket connections and real-time communication.
-- templates*: Files for dynamic content and template management.
+- socket/: Modules for WebSocket connections and real-time communication.
+- templates/: Files for dynamic content and template management.
 - main.ts: Entry point of the application.
 
-Test
-```bash
-# unit tests
-$ npm run test
+ Scripts
+The following scripts are available for development and testing:
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```json
+"scripts": {
+  "build": "nest build",
+  "format": "prettier --write \"src//*.ts\" \"test//*.ts\"",
+  "start": "nest start",
+  "start:dev": "nest start --watch",
+  "start:debug": "nest start --debug --watch",
+  "start:prod": "node dist/main",
+  "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+  "test": "jest",
+  "test:watch": "jest --watch",
+  "test:cov": "jest --coverage",
+  "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+  "test:e2e": "jest --config ./test/jest-e2e.json"
+}
 ```
+
+Commonly Used Commands
+- Build the project:
+  ```bash
+  npm run build
+  ```
+- Start the development server:
+  ```bash
+  npm run start:dev
+  ```
+- Run all tests:
+  ```bash
+  npm run test
+  ```
+- Format the code:
+  ```bash
+  npm run format
+  ```
+- Lint the code:
+  ```bash
+  npm run lint
+  ```
+- Run E2E tests:
+  ```bash
+  npm run test:e2e
+  ```
 
 Support
 TalkyTown is an open-source project licensed under MIT. Contributions, feedback, and support are always welcome. If you'd like to contribute, please submit a pull request or open an issue.
 
-Stay in Touch
+ Stay in Touch
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
-License
+ License
 This project is licensed under the MIT License.
 
